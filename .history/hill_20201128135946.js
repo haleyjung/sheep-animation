@@ -32,7 +32,7 @@ export class Hill {
         let dots = [];
         cur.x += this.speed;
 
-        // make seamless hills by adding new hills as the starting points of the original hills' x-value move into the screen
+        // make seamless hills by adding new hill before the x-value of the original hills appear in the screen
         if(cur.x > -this.gap) {
             this.points.unshift({
                 x: -(this.gap *2),

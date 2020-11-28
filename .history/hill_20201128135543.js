@@ -28,20 +28,10 @@ export class Hill {
         let cur = this.points[0];
         let prev = cur;
 
-        // animate hills - add speed to x-value
         let dots = [];
+
+        // animate hills
         cur.x += this.speed;
-
-        // make seamless hills by adding new hills as the starting points of the original hills' x-value move into the screen
-        if(cur.x > -this.gap) {
-            this.points.unshift({
-                x: -(this.gap *2),
-                y: this.getY()
-            });
-        } else if (cur.x > this.stageWidth + this.gap) {
-            this.points.splice(-1);
-        }
-
         ctx.moveTo(cur.x, cur.y);
 
         let prevCx = cur.x;
@@ -49,7 +39,7 @@ export class Hill {
 
         for (let i = 1; i < this.points.length; i++) {
             cur = this.points[i];
-            cur.x += this.speed;
+
             const cx = (prev.x + cur.x) / 2;
             const cy = (prev.y + cur.y) / 2;
             ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);

@@ -52,8 +52,6 @@ class App {
         for (let i = 0; i < this.hills.length; i++) {
             dots = this.hills[i].draw(this.ctx);
         }
-
-        this.sheepController.draw(this.ctx, t, dots);
     }
 }
 

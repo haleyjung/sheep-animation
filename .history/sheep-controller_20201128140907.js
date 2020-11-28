@@ -1,7 +1,3 @@
-import {
-    Sheep
-} from "./sheep.js";
-
 export class SheepController {
     constructor() {
         this.img = new Image();
@@ -33,21 +29,6 @@ export class SheepController {
     }
 
     draw(ctx, t, dots) {
-        if(this.isloaded) {
-            this.cur += 1;
-            if (this.cur > 200) {
-                this.cur = 0;
-                this.addSheep();
-            }
 
-            for (let i = this.items.length - 1; i >= 0; i--) {
-                const item = this.items[i];
-                if (item.x < -item.width) {
-                    this.items.splice(i, 1);
-                } else {
-                    item.draw(ctx, t, dots);
-                }
-            }
-        }
     }
 }

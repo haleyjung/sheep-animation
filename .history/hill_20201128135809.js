@@ -28,11 +28,11 @@ export class Hill {
         let cur = this.points[0];
         let prev = cur;
 
-        // animate hills - add speed to x-value
+        // animate hills - add speed to x value
         let dots = [];
         cur.x += this.speed;
 
-        // make seamless hills by adding new hills as the starting points of the original hills' x-value move into the screen
+        // make seamless hills
         if(cur.x > -this.gap) {
             this.points.unshift({
                 x: -(this.gap *2),
