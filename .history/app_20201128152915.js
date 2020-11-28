@@ -60,8 +60,6 @@ class App {
 
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
-        this.sun.draw(this.ctx, t);
-
         let dots;
         for (let i = 0; i < this.hills.length; i++) {
             dots = this.hills[i].draw(this.ctx);
