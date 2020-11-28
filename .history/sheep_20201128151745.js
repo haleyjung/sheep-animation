@@ -53,9 +53,9 @@ export class Sheep {
 
         ctx.save();
         ctx.translate(this.x, this.y);
-
-        // rotate canvas based on getPointOnQuad so that the img rotates based on the hill curve
-        ctx.rotate(closest.rotation);
+        
+        // rotate canvas based on getPointOnQuad
+        ctx.rotate(closets.rotation);
 
         // Pre-draw a black box for a test run
         // ctx.fillStyle = '#000000';

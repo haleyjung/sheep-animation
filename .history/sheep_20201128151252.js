@@ -53,12 +53,9 @@ export class Sheep {
 
         ctx.save();
         ctx.translate(this.x, this.y);
-
-        // rotate canvas based on getPointOnQuad so that the img rotates based on the hill curve
-        ctx.rotate(closest.rotation);
+        ctx.fillStyle = '#000000';
 
         // Pre-draw a black box for a test run
-        // ctx.fillStyle = '#000000';
         // ctx.fillRect(
         //     // x: half of the width to anchor the bottom center
         //     -this.sheepWidthHalf,
@@ -115,13 +112,9 @@ export class Sheep {
     }
 
     getPointOnQuad(x1, y1, x2, y2, x3, y3, t) {
-        const tx = this.quadTangent(x1, x2, x3, t);
-        const ty = this.quadTangent(y1, y2, y3, t);
-        const rotation = -Math.atan2(tx, ty) + (90 * Math.PI / 180);
         return {
             x: this.getQuadValue(x1, x2, x3, t),
             y: this.getQuadValue(y1, y2, y3, t),
-            rotation: rotation,
         };
     }
 
